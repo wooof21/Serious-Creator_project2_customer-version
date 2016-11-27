@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:background="#45000000" >
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="#ffffff"
+        android:orientation="vertical" >
+        <FrameLayout
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#101119">
+
+            <ImageView
+                android:id="@+id/title_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/back" />
+
+            <TextView
+                android:id="@+id/title_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:paddingBottom="7dp"
+                android:paddingTop="7dp"
+                android:text="选择城市"
+                android:textColor="#ffffff"
+                android:textSize="18sp" />
+        </FrameLayout>
+        
+        
+        <TextView 
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="已开通服务城市"
+            android:textSize="16sp"
+            android:textColor="#d1d1d1"
+            android:paddingLeft="20dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            />
+        <TextView 
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#d1d1d1"
+            />
+        
+        <FrameLayout 
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#f4f4f4"
+            >
+            <TextView 
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="长春市"
+            android:textSize="15sp"
+            android:textColor="#101119"
+            android:paddingLeft="20dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            />
+            
+            
+            <ImageView 
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/mian_ok"
+                android:layout_gravity="center_vertical|right"
+                android:layout_marginRight="20dp"
+                />
+        </FrameLayout>
+        <TextView 
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#d1d1d1"
+            />
+        
+        
+        <TextView
+            android:id="@+id/main_popup_ok"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="40dp"
+            android:background="#ff5b85"
+            android:gravity="center"
+            android:paddingBottom="15dp"
+            android:paddingTop="15dp"
+            android:text="确认"
+            android:textColor="#ffffff"
+            android:textSize="14sp" />
+        <TextView 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="其他城市陆续在开放"
+            android:textSize="14sp"
+            android:textColor="#a1a1a1"
+            android:layout_marginBottom="20dp"
+            android:layout_gravity="center"
+            />
+      </LinearLayout>  
+</RelativeLayout>

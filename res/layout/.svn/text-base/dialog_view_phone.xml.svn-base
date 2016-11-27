@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+    <FrameLayout
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#101119" >
+
+        <ImageView
+            android:id="@+id/title_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/back" />
+
+        <TextView
+            android:id="@+id/title_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:paddingBottom="7dp"
+            android:paddingTop="7dp"
+            android:text="预留电话"
+            android:textColor="#ffffff"
+            android:textSize="18sp" />
+    </FrameLayout>
+
+    
+    <EditText 
+        android:id="@+id/dialog_view_phone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#f4f4f4"
+        android:layout_marginTop="20dp"
+        android:ems="12"
+        android:layout_gravity="center_horizontal"
+        android:numeric="integer"
+        android:maxLength="11"
+        android:hint="编辑电话"
+        android:textSize="14sp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:paddingLeft="10dp"
+        />
+    
+    <LinearLayout
+        android:id="@+id/dialog_view_submit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="35dp"
+        android:layout_marginRight="35dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="10dp"
+        android:background="#ff5b85"
+        android:orientation="vertical" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="确认"
+            android:textColor="#ffffff"
+            android:textSize="14sp" 
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"/>
+
+    </LinearLayout>
+</LinearLayout>

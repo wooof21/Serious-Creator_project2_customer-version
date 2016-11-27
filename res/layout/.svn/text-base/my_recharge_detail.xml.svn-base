@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#f4f4f4" >
+
+    <FrameLayout
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#101119" >
+
+        <ImageView
+            android:id="@+id/title_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/back" />
+
+        <TextView
+            android:id="@+id/title_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:paddingBottom="7dp"
+            android:paddingTop="7dp"
+            android:text="充值卡"
+            android:textColor="#ffffff"
+            android:textSize="18sp" />
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ff5b85"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/my_recharge_detail_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="15dp"
+            android:text=""
+            android:textColor="#ffffff"
+            android:textSize="16sp" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="30dp" >
+
+            <TextView
+                android:id="@+id/my_recharge_detail_amount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text=""
+                android:textColor="#ffffff"
+                android:textSize="45sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/my_recharge_detail_amount"
+                android:layout_toRightOf="@id/my_recharge_detail_amount"
+                android:text="元"
+                android:textColor="#ffffff"
+                android:textSize="16sp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="5dp" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#ffffff"
+        android:layout_marginTop="5dp"
+        >
+        <TextView 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="充值卡介绍"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:textSize="16sp"
+            android:textColor="#101119"
+            />
+        
+        <TextView 
+            android:id="@+id/my_recharge_center_intro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="10dp"
+            android:textSize="14sp"
+            android:textColor="#101119"
+            android:paddingTop="10dp"
+            android:paddingBottom="8dp"
+            android:paddingRight="30dp"
+            />
+        
+       
+        
+    </LinearLayout>
+    
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#ffffff"
+        android:layout_marginTop="5dp"
+        >
+        <TextView 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="支付信息："
+            android:textSize="16sp"
+            android:textColor="#101119"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            />
+        <TextView 
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp"
+            android:background="#d1d1d1"
+            />
+        <RelativeLayout 
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            >
+            
+            <ImageView 
+                android:id="@+id/iiiiiiiiiiiivvvvvvvvvvvvvvvvvviiiiiiiiiiiiiiiiiiiiivvvvvvvvvvvvvv"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/zhifubao"
+                />
+            <TextView 
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/iiiiiiiiiiiivvvvvvvvvvvvvvvvvviiiiiiiiiiiiiiiiiiiiivvvvvvvvvvvvvv"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:text="支付宝支付"
+                android:textSize="15sp"
+                android:textColor="#101119"
+                />
+            
+            <TextView 
+                android:id="@+id/my_recharge_center_total"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textSize="15sp"
+                android:textColor="#ff5b85"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                
+                />
+        </RelativeLayout>
+        
+    </LinearLayout>
+    
+    <TextView
+        android:id="@+id/my_recharge_center_pay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="80dp"
+        android:background="@drawable/tvbg_green"
+        android:gravity="center"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp"
+        android:text="立即支付"
+        android:textColor="#ffffff"
+        android:textSize="16sp" />
+</LinearLayout>

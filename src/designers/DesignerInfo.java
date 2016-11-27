@@ -1,0 +1,1077 @@
+/**
+ * 
+ */
+package designers;
+
+import java.io.File;
+import java.util.ArrayList;
+import java.util.HashMap;
+
+import login.LoginActivity;
+import model.MyWorkListModel;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import tools.Config;
+import tools.CustomProgressDialog;
+import tools.Exit;
+import tools.ScrollListView;
+import tools.Tools;
+import view.MarqueeTV;
+
+import com.mkcomingc.BaseActivity;
+import com.mkcomingc.R;
+import com.nostra13.universalimageloader.cache.disc.impl.UnlimitedDiscCache;
+import com.nostra13.universalimageloader.core.DisplayImageOptions;
+import com.nostra13.universalimageloader.core.ImageLoader;
+import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
+import com.nostra13.universalimageloader.core.assist.ImageScaleType;
+import com.nostra13.universalimageloader.utils.StorageUtils;
+
+import designers.DesignersList.ListAsync;
+
+import adapter.AddressListAdapter;
+import adapter.MyHonorListAdapter;
+import adapter.MyWorkListViewAdapter;
+import adapter.ScheduleGVAdapter;
+import android.annotation.SuppressLint;
+import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.BitmapDrawable;
+import android.os.AsyncTask;
+import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
+import android.util.Log;
+import android.view.Gravity;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.view.ViewGroup.LayoutParams;
+import android.view.animation.AnimationUtils;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemSelectedListener;
+import android.widget.ArrayAdapter;
+import android.widget.FrameLayout;
+import android.widget.GridView;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.ListView;
+import android.widget.PopupWindow;
+import android.widget.RelativeLayout;
+import android.widget.ScrollView;
+import android.widget.Spinner;
+import android.widget.TextView;
+import android.widget.Toast;
+import android.widget.AdapterView.OnItemClickListener;
+
+/**
+ * @author Liming Chu
+ * 
+ * @param
+ * @return
+ */
+public class DesignerInfo extends BaseActivity implements OnClickListener {
+
+    private ImageView back;
+    private ImageView star;
+    private TextView count;
+    private TextView rate;
+    private ImageView pic;
+    private TextView name;
+    private ImageView sex;
+    private TextView level;
+    private MarqueeTV skills;
+    private TextView pro;
+    private TextView com;
+    private TextView tim;
+
+    private MarqueeTV brand;
+    private MarqueeTV area;
+    private TextView yrs;
+    private TextView phone;
+    private TextView intro;
+
+    private FrameLayout time;
+    private TextView timeTv;
+    private FrameLayout comment;
+    private TextView commentCount;
+    private TextView work;
+    private TextView underline1;
+    private TextView honor;
+    private TextView underline2;
+    private ListView lv;
+    private TextView reserve;
+    private ScrollView parent;
+
+    private String zid, zrid, _name, type, sqId, addrSel, address;
+    private DisplayImageOptions options;
+
+    private HashMap<String, String> picId, zrId;
+    private ArrayList<HashMap<String, String>> ry_list;
+    private ArrayList<String> zrList;
+    private ArrayList<MyWorkListModel> zpj_list;
+    private String _sczt;
+
+    private String date1, date2, date3, date4;
+    private ArrayList<HashMap<String, String>> list1, list2, list3, list4;
+
+    private String dt;
+
+    private RelativeLayout zxsRL;
+    private Spinner zxsSpinner;
+    private TextView zxsSubmit;
+
+    /*
+     * (non-Javadoc)
+     * 
+     * @see com.mkcomingc.BaseActivity#onResume()
+     */
+    @Override
+    protected void onResume() {
+	// TODO Auto-generated method stub
+	super.onResume();
+    }
+
+    /*
+     * (non-Javadoc)
+     * 
+     * @see com.mkcomingc.BaseActivity#onPause()
+     */
+    @Override
+    protected void onPause() {
+	// TODO Auto-generated method stub
+	super.onPause();
+    }
+
+    /*
+     * (non-Javadoc)
+     * 
+     * @see android.app.Activity#onCreate(android.os.Bundle)
+     */
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+	// TODO Auto-generated method stub
+	super.onCreate(savedInstanceState);
+	setContentView(R.layout.designer_info);
+	Exit.getInstance().addActivity(this);
+	prepareView();
+	zid = getIntent().getExtras().getString("zid");
+	zrid = getIntent().getExtras().getString("zrid");
+	_name = getIntent().getExtras().getString("name");
+	type = getIntent().getExtras().getString("type");// yy, 从预约点击进来，
+							 // frag为底部导航点击进来
+	sqId = getIntent().getExtras().getString("sqid");
+	addrSel = getIntent().getExtras().getString("sel");// addrSel, 地址选择方式，
+							   // 1位只有商圈， 2位详细地址
+	address = getIntent().getExtras().getString("address");// addrSel=1时，
+							       // 需要手填详细地址，
+							       // 2为选择详细地址
+
+	new InfoAsync().execute(zid);
+
+	if (type.equals("frag")) {
+	    zxsRL.setVisibility(View.VISIBLE);
+	    reserve.setVisibility(View.GONE);
+	}
+
+    }
+
+    class InfoAsync extends AsyncTask<String, Void, String> {
+
+	private CustomProgressDialog pd;
+
+	@Override
+	protected void onPreExecute() {
+	    // TODO Auto-generated method stub
+	    super.onPreExecute();
+	    pd = CustomProgressDialog.createDialog(DesignerInfo.this);
+	    pd.show();
+	}
+
+	@Override
+	protected String doInBackground(String... params) {
+	    // TODO Auto-generated method stub
+	    String url = Config.DESIGNER_INFO_MAIN_URL + params[0] + "&uid="
+		    + new Tools().getUserId(DesignerInfo.this);
+	    Log.e("url", url);
+	    String data = new Tools().getURL(url);
+	    System.out.println(data);
+	    String code = "";
+	    try {
+		JSONObject jObject = new JSONObject(data);
+		JSONObject result = jObject.getJSONObject("result");
+		code = result.getString("code");
+		if (code.equals("1")) {
+		    JSONObject job = jObject.getJSONObject("data");
+		    HashMap<String, String> hashMap = new HashMap<String, String>();
+		    hashMap.put("id", job.getString("id"));
+		    hashMap.put("xm", job.getString("xm"));
+		    hashMap.put("hpl", job.getString("hpl"));
+		    hashMap.put("dj", job.getString("dj"));
+		    hashMap.put("cynx", job.getString("cynx"));
+		    hashMap.put("grjj", job.getString("grjj"));
+		    hashMap.put("pic", job.getString("pic"));
+		    hashMap.put("zpjs", job.getString("zpjs"));
+		    hashMap.put("ds", job.getString("ds"));
+		    hashMap.put("zyxs", job.getString("zyxs"));
+		    hashMap.put("gtxs", job.getString("gtxs"));
+		    hashMap.put("ssxs", job.getString("ssxs"));
+		    hashMap.put("sczt", job.getString("sczt"));
+		    hashMap.put("xb", job.getString("xb"));
+		    hashMap.put("dh", job.getString("dh"));
+		    _sczt = job.getString("sczt");
+		    Message msg = handler.obtainMessage();
+		    msg.what = 1;
+		    msg.obj = hashMap;
+		    msg.sendToTarget();
+
+		    String _sczx = "";
+		    JSONArray sczx = job.getJSONArray("sczx");
+		    for (int i = 0, j = sczx.length(); i < j; i++) {
+			JSONObject job1 = sczx.optJSONObject(i);
+			_sczx += job1.getString("classname") + " · ";
+		    }
+		    Message msg1 = handler.obtainMessage();
+		    msg1.what = 2;
+		    msg1.obj = _sczx;
+		    msg1.sendToTarget();
+
+		    String _hzpp = "";
+		    JSONArray hzpp = job.getJSONArray("hzpp");
+		    for (int i = 0, j = hzpp.length(); i < j; i++) {
+			JSONObject job2 = hzpp.optJSONObject(i);
+			_hzpp += job2.getString("classname") + " · ";
+		    }
+		    Message msg2 = handler.obtainMessage();
+		    msg2.what = 3;
+		    msg2.obj = _hzpp;
+		    msg2.sendToTarget();
+
+		    String _fwfw = "";
+		    JSONArray fwfw = job.getJSONArray("fwfw");
+		    for (int i = 0, j = fwfw.length(); i < j; i++) {
+			JSONObject job3 = fwfw.optJSONObject(i);
+			_fwfw += job3.getString("classname") + " · ";
+		    }
+		    Message msg3 = handler.obtainMessage();
+		    msg3.what = 4;
+		    msg3.obj = _fwfw;
+		    msg3.sendToTarget();
+
+		    JSONArray zr = job.getJSONArray("zr");
+		    for (int i = 0, j = zr.length(); i < j; i++) {
+			JSONObject job5 = zr.optJSONObject(i);
+			zrId.put(job5.getString("classname"),
+				job5.getString("id"));
+			zrList.add(job5.getString("classname"));
+		    }
+		    zrid = zrId.get(zrList.get(0));
+		    Message msg100 = handler.obtainMessage();
+		    msg100.what = 100;
+		    msg100.sendToTarget();
+
+		    JSONArray zpj = job.getJSONArray("zpj");
+		    for (int i = 0, j = zpj.length(); i < j; i++) {
+			JSONObject job4 = zpj.optJSONObject(i);
+			MyWorkListModel model = new MyWorkListModel();
+			model.setTitle(job4.getString("classname"));
+			JSONArray jArray = job4.getJSONArray("piclist");
+			ArrayList<String> picList = new ArrayList<String>();
+			for (int m = 0, n = jArray.length(); m < n; m++) {
+			    JSONObject job3 = jArray.optJSONObject(m);
+			    picList.add(job3.getString("pic"));
+			    picId.put(job3.getString("pic"),
+				    job3.getString("id"));
+			}
+			model.setPicAddr(picList);
+
+			zpj_list.add(model);//
+
+		    }
+		    Message msg4 = handler.obtainMessage();
+		    msg4.what = 5;
+		    msg4.obj = zpj_list;
+		    msg4.sendToTarget();
+
+		    JSONArray ry = job.getJSONArray("ry");
+		    for (int i = 0, j = ry.length(); i < j; i++) {
+			JSONObject job4 = ry.optJSONObject(i);
+			HashMap<String, String> hashMap1 = new HashMap<String, String>();
+			hashMap1.put("id", job4.getString("id"));
+			hashMap1.put("pic", job4.getString("pic"));
+			hashMap1.put("hdsj", job4.getString("hdsj"));
+			hashMap1.put("rymc", job4.getString("rymc"));
+
+			ry_list.add(hashMap1);
+		    }
+
+		}
+	    } catch (JSONException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	    }
+
+	    return code;
+	}
+
+	@Override
+	protected void onPostExecute(String result) {
+	    // TODO Auto-generated method stub
+	    super.onPostExecute(result);
+	    pd.dismiss();
+	    if (result.equals("0")) {
+		Toast.makeText(DesignerInfo.this, "获取造型师个人信息失败，请重试！",
+			Toast.LENGTH_SHORT).show();
+		DesignerInfo.this.finish();
+	    }
+	}
+    }
+
+    class PopupWindowsStyle extends PopupWindow {
+
+	public PopupWindowsStyle(Context mContext, View parent) {
+
+	    View view = View.inflate(mContext, R.layout.dialog_view_remark,
+		    null);
+	    view.startAnimation(AnimationUtils.loadAnimation(mContext,
+		    R.anim.push_bottom_in_2));
+
+	    Spinner spinner = (Spinner) view
+		    .findViewById(R.id.reserve_order_style_spinnersssss);
+	    LinearLayout submit = (LinearLayout) view
+		    .findViewById(R.id.dialog_view_submit);
+
+	    // lv.startAnimation(AnimationUtils.loadAnimation(mContext,
+	    // R.anim.push_bottom_in_2));
+
+	    ArrayAdapter<String> adapter1 = new ArrayAdapter<String>(
+		    DesignerInfo.this, R.layout.area_spinner_tv, R.id.text,
+		    zrList);
+	    spinner.setAdapter(adapter1);
+	    spinner.setOnItemSelectedListener(new OnItemSelectedListener() {
+
+		@Override
+		public void onItemSelected(AdapterView<?> parent, View view,
+			int position, long id) {
+		    // TODO Auto-generated method stub
+		    zrid = zrId.get(zrList.get(position));
+		    _name = zrList.get(position);
+		    Log.e("zrid", zrid);
+		}
+
+		@Override
+		public void onNothingSelected(AdapterView<?> parent) {
+		    // TODO Auto-generated method stub
+		    zrid = zrId.get(zrList.get(0));
+		    _name = zrList.get(0);
+		    System.out.println("zrid ---> " + zrid);
+		}
+	    });
+
+	    setWidth(LayoutParams.FILL_PARENT);
+	    setHeight(LayoutParams.FILL_PARENT);
+	    // setBackgroundDrawable(new BitmapDrawable());
+	    setFocusable(true);
+	    setOutsideTouchable(false);
+	    setContentView(view);
+	    showAtLocation(parent, Gravity.CENTER, 0, 0);
+	    update();
+
+	    // add.setOnClickListener(new OnClickListener() {
+	    //
+	    // @Override
+	    // public void onClick(View v) {
+	    // // TODO Auto-generated method stub
+	    // Intent intent = new Intent(DesignerReserve.this,
+	    // AddAddressPopUp.class);
+	    // intent.putExtra("areaMap", areaList);
+	    // startActivityForResult(intent, 100);
+	    // }
+	    // });
+
+	    submit.setOnClickListener(new OnClickListener() {
+
+		@Override
+		public void onClick(View v) {
+		    // TODO Auto-generated method stub
+		    dismiss();
+		}
+	    });
+
+	}
+
+    }
+
+    private Handler handler = new Handler() {
+
+	@Override
+	public void handleMessage(Message msg) {
+	    // TODO Auto-generated method stub
+	    super.handleMessage(msg);
+	    switch (msg.what) {
+	    case 1:
+		HashMap<String, String> hashMap = (HashMap<String, String>) msg.obj;
+		count.setText(hashMap.get("ds"));
+		rate.setText(hashMap.get("hpl"));
+		if (hashMap.get("pic").startsWith("http")) {
+		    ImageLoader.getInstance().displayImage(hashMap.get("pic"),
+			    pic, options);
+		} else {
+		    ImageLoader.getInstance().displayImage(
+			    Config.URL + hashMap.get("pic"), pic, options);
+		}
+		name.setText(hashMap.get("xm"));
+		if (hashMap.get("xb").equals("1")) {
+		    sex.setImageResource(R.drawable.sex_male);
+		} else {
+		    sex.setImageResource(R.drawable.sex_female);
+		}
+		level.setText(hashMap.get("dj"));
+		pro.setText("专业：" + hashMap.get("zyxs"));
+		com.setText("沟通：" + hashMap.get("gtxs"));
+		tim.setText("守时：" + hashMap.get("ssxs"));
+		yrs.setText(hashMap.get("cynx"));
+		intro.setText(hashMap.get("grjj"));
+		commentCount.setText("顾客评价(" + hashMap.get("zpjs") + ")");
+		if (hashMap.get("sczt").equals("1")) {
+		    star.setImageResource(R.drawable.star_clect);
+		} else {
+		    star.setImageResource(R.drawable.star1);
+		}
+		break;
+	    case 2:
+		String sczx = (String) msg.obj;
+		skills.setText(sczx.substring(0, sczx.length() - 2));
+		System.out.println(sczx.substring(0, sczx.length() - 2));
+		break;
+	    case 3:
+		String hzpp = (String) msg.obj;
+		brand.setText(hzpp.substring(0, hzpp.length() - 2));
+		System.out.println(hzpp.substring(0, hzpp.length() - 2));
+		break;
+	    case 4:
+		String fwfw = (String) msg.obj;
+		area.setText(fwfw.substring(0, fwfw.length() - 2));
+		System.out.println(fwfw.substring(0, fwfw.length() - 2));
+		break;
+	    case 5:
+		MyWorkListViewAdapter adapter = new MyWorkListViewAdapter(
+			zpj_list, DesignerInfo.this, picId);
+		lv.setAdapter(adapter);
+		ScrollListView.setListViewHeightBasedOnChildren(lv);
+		break;
+	    case 10:
+		String text = (String) msg.obj;
+		Toast.makeText(DesignerInfo.this, text, Toast.LENGTH_SHORT)
+			.show();
+		if (_sczt.equals("1")) {
+		    star.setImageResource(R.drawable.star1);
+		} else {
+		    star.setImageResource(R.drawable.star_clect);
+		}
+		break;
+	    case 100:
+		ArrayAdapter<String> adapter1 = new ArrayAdapter<String>(
+			DesignerInfo.this, R.layout.area_spinner_tv, R.id.text,
+			zrList);
+		zxsSpinner.setAdapter(adapter1);
+		zxsSpinner
+			.setOnItemSelectedListener(new OnItemSelectedListener() {
+
+			    @Override
+			    public void onItemSelected(AdapterView<?> parent,
+				    View view, int position, long id) {
+				// TODO Auto-generated method stub
+				zrid = zrId.get(zrList.get(position));
+				_name = zrList.get(position);
+				Log.e("zrid", zrid);
+			    }
+
+			    @Override
+			    public void onNothingSelected(AdapterView<?> parent) {
+				// TODO Auto-generated method stub
+				zrid = zrId.get(zrList.get(0));
+				_name = zrList.get(0);
+				System.out.println("zrid ---> " + zrid);
+			    }
+			});
+		zxsSubmit.setOnClickListener(new OnClickListener() {
+
+		    @Override
+		    public void onClick(View v) {
+			// TODO Auto-generated method stub
+			new TimeAsync().execute(zid);
+		    }
+		});
+
+		break;
+	    default:
+		break;
+	    }
+	}
+
+    };
+
+    private void prepareView() {
+	back = (ImageView) findViewById(R.id.title_back);
+	star = (ImageView) findViewById(R.id.designer_info_star);
+	count = (TextView) findViewById(R.id.designer_info_count);
+	rate = (TextView) findViewById(R.id.designer_info_rate);
+	pic = (ImageView) findViewById(R.id.designer_info_pic);
+	name = (TextView) findViewById(R.id.designer_info_name);
+	sex = (ImageView) findViewById(R.id.designer_info_sex);
+	level = (TextView) findViewById(R.id.designer_info_level);
+	skills = (MarqueeTV) findViewById(R.id.designer_info_skills);//
+	pro = (TextView) findViewById(R.id.designer_info_pro);
+	com = (TextView) findViewById(R.id.designer_info_com);
+	tim = (TextView) findViewById(R.id.designer_info_tim);
+	brand = (MarqueeTV) findViewById(R.id.designer_info_brand);//
+	area = (MarqueeTV) findViewById(R.id.designer_info_area);//
+	yrs = (TextView) findViewById(R.id.designer_info_yrs);
+	phone = (TextView) findViewById(R.id.designer_info_phone);
+	intro = (TextView) findViewById(R.id.designer_info_intro);
+	comment = (FrameLayout) findViewById(R.id.designer_info_comment);
+	commentCount = (TextView) findViewById(R.id.designer_info_comment_count);
+	work = (TextView) findViewById(R.id.designer_info_work);
+	underline1 = (TextView) findViewById(R.id.designer_info_underline1);
+	honor = (TextView) findViewById(R.id.designer_info_honor);
+	underline2 = (TextView) findViewById(R.id.designer_info_underline2);
+	reserve = (TextView) findViewById(R.id.designer_info_yuyue);
+	lv = (ListView) findViewById(R.id.designer_info_lv);
+	parent = (ScrollView) findViewById(R.id.scrollView1);
+	time = (FrameLayout) findViewById(R.id.designer_info_reserve_time);
+	timeTv = (TextView) findViewById(R.id.designer_info_time);
+
+	zxsRL = (RelativeLayout) findViewById(R.id.designer_info_zxs_rl);
+	zxsSpinner = (Spinner) findViewById(R.id.designer_info_zxs_spinner);
+	zxsSubmit = (TextView) findViewById(R.id.designer_info_zxs_yuyue);
+
+	back.setOnClickListener(this);
+	star.setOnClickListener(this);
+	comment.setOnClickListener(this);
+	work.setOnClickListener(this);
+	honor.setOnClickListener(this);
+	reserve.setOnClickListener(this);
+	time.setOnClickListener(this);
+
+	lv.clearFocus();
+	brand.setFocusable(true);
+	brand.setFocusableInTouchMode(true);
+	brand.requestFocus();
+	preperImageLoader();
+
+	zrList = new ArrayList<String>();
+	zrId = new HashMap<String, String>();
+	picId = new HashMap<String, String>();
+	zpj_list = new ArrayList<MyWorkListModel>();
+	ry_list = new ArrayList<HashMap<String, String>>();
+    }
+
+    /*
+     * (non-Javadoc)
+     * 
+     * @see android.view.View.OnClickListener#onClick(android.view.View)
+     */
+    @Override
+    public void onClick(View v) {
+	// TODO Auto-generated method stub
+	switch (v.getId()) {
+	case R.id.title_back:
+	    finish();
+	    break;
+	case R.id.designer_info_star:
+	    if (new Tools().isUserLogin(DesignerInfo.this)) {
+		if (_sczt.equals("1")) {
+		    star.setImageResource(R.drawable.star_clect);
+		    _sczt = "0";
+		} else {
+		    star.setImageResource(R.drawable.star1);
+		    _sczt = "1";
+		}
+		new AsyncTask<Void, Void, Void>() {
+		    private CustomProgressDialog pd;
+
+		    @Override
+		    protected void onPreExecute() {
+			// TODO Auto-generated method stub
+			super.onPreExecute();
+			pd = CustomProgressDialog
+				.createDialog(DesignerInfo.this);
+			pd.show();
+		    }
+
+		    @Override
+		    protected Void doInBackground(Void... params) {
+			// TODO Auto-generated method stub
+			String url = Config.DESIGNER_COLLECT_URL + zid
+				+ "&uid="
+				+ new Tools().getUserId(DesignerInfo.this);
+			Log.e("url", url);
+			String data = new Tools().getURL(url);
+			System.out.println(data);
+
+			try {
+			    JSONObject job = new JSONObject(data);
+			    JSONObject result = job.getJSONObject("result");
+			    String code = result.getString("code");
+			    String text = "";
+			    if (code.equals("1")) {
+				if (_sczt.equals("1")) {
+				    text = "收藏成功！";
+				} else {
+				    text = "取消收藏成功！";
+				}
+			    } else {
+				if (_sczt.equals("1")) {
+				    text = "收藏失败！";
+				} else {
+				    text = "取消收藏失败！";
+				}
+			    }
+			    Message msg = handler.obtainMessage();
+			    msg.what = 10;
+			    msg.obj = text;
+			    msg.sendToTarget();
+			} catch (JSONException e) {
+			    // TODO Auto-generated catch block
+			    e.printStackTrace();
+			}
+			return null;
+
+		    }
+
+		    @Override
+		    protected void onPostExecute(Void result) {
+			// TODO Auto-generated method stub
+			super.onPostExecute(result);
+			pd.dismiss();
+		    }
+
+		}.execute();
+	    } else {
+		Toast.makeText(DesignerInfo.this, "请先登录！", Toast.LENGTH_SHORT)
+			.show();
+		startActivity(new Intent(DesignerInfo.this, LoginActivity.class));
+	    }
+
+	    break;
+	case R.id.designer_info_comment:
+	    Intent intent = new Intent(this, CommentListMain.class);
+	    intent.putExtra("zid", zid);
+	    startActivity(intent);
+	    break;
+	case R.id.designer_info_work:
+	    MyWorkListViewAdapter adapter = new MyWorkListViewAdapter(zpj_list,
+		    DesignerInfo.this, picId);
+	    lv.setAdapter(adapter);
+	    ScrollListView.setListViewHeightBasedOnChildren(lv);
+	    underline1.setVisibility(View.VISIBLE);
+	    underline2.setVisibility(View.GONE);
+	    break;
+	case R.id.designer_info_honor:
+	    underline2.setVisibility(View.VISIBLE);
+	    underline1.setVisibility(View.GONE);
+	    if (ry_list.size() != 0) {
+		MyHonorListAdapter adapter1 = new MyHonorListAdapter(ry_list,
+			DesignerInfo.this);
+		lv.setAdapter(adapter1);
+	    } else {
+		Toast.makeText(DesignerInfo.this, "暂无荣誉！", Toast.LENGTH_SHORT)
+			.show();
+	    }
+	    ScrollListView.setListViewHeightBasedOnChildren(lv);
+	    break;
+	case R.id.designer_info_yuyue:
+	    if (new Tools().isUserLogin(DesignerInfo.this)) {
+		for (String s : zrList) {
+		    System.out.println(s);
+		}
+		new TimeAsync().execute(zid);// 选择预约时间
+	    } else {
+		Toast.makeText(DesignerInfo.this, "请先登录！", Toast.LENGTH_SHORT)
+			.show();
+		startActivity(new Intent(DesignerInfo.this, LoginActivity.class));
+	    }
+
+	    // if (zrid.equals("")) {
+	    // new PopupWindowsStyle(DesignerInfo.this, parent);
+	    // } else {
+	    // if (timeTv.getText().toString().length() == 0) {
+	    // Toast.makeText(DesignerInfo.this, "请选择预约时间！",
+	    // Toast.LENGTH_SHORT).show();
+	    // } else {
+	    // // Intent intent2 = new Intent(this, DesignerReserve.class);
+	    // // intent2.putExtra("time", timeTv.getText().toString());
+	    // // intent2.putExtra("zid", zid);
+	    // // intent2.putExtra("zrid", zrid);
+	    // // intent2.putExtra("name", _name);
+	    // // intent2.putExtra("type", type);
+	    // // startActivity(intent2);
+	    // }
+	    // }
+	    break;
+	case R.id.designer_info_reserve_time:
+
+	    break;
+	default:
+	    break;
+	}
+    }
+
+    private void preperImageLoader() {
+
+	/******************* 配置ImageLoder ***********************************************/
+	File cacheDir = StorageUtils.getOwnCacheDirectory(this,
+		"imageloader/Cache");
+
+	ImageLoaderConfiguration config = new ImageLoaderConfiguration.Builder(
+		this).denyCacheImageMultipleSizesInMemory()
+		.discCache(new UnlimitedDiscCache(cacheDir))// 自定义缓存路径
+		.build();// 开始构建
+
+	options = new DisplayImageOptions.Builder().cacheInMemory()
+		.cacheOnDisc().imageScaleType(ImageScaleType.IN_SAMPLE_INT)
+		.showImageForEmptyUri(R.drawable.question)
+		.showImageOnFail(R.drawable.question).build();
+
+	ImageLoader.getInstance().init(config);// 全局初始化此配置
+	/*********************************************************************************/
+    }
+
+    /**
+     * 选择时间弹出窗
+     * **/
+    class PopupWindows extends PopupWindow {
+	private String date = "1";
+
+	public PopupWindows(Context mContext, View parent) {
+
+	    View view = View.inflate(mContext, R.layout.my_time_setting, null);
+	    view.startAnimation(AnimationUtils.loadAnimation(mContext,
+		    R.anim.push_bottom_in_2));
+	    final TextView tv1 = (TextView) view
+		    .findViewById(R.id.my_time_date1);
+	    final TextView tv2 = (TextView) view
+		    .findViewById(R.id.my_time_date2);
+	    final TextView tv3 = (TextView) view
+		    .findViewById(R.id.my_time_date3);
+	    final TextView tv4 = (TextView) view
+		    .findViewById(R.id.my_time_date4);
+	    final GridView gv = (GridView) view.findViewById(R.id.my_time_gv);
+	    // lv.startAnimation(AnimationUtils.loadAnimation(mContext,
+	    // R.anim.push_bottom_in_2));
+	    tv1.setText(date1);
+	    tv2.setText(date2);
+	    tv3.setText(date3);
+	    tv4.setText(date4);
+	    tv1.setBackgroundColor(Color.rgb(240, 240, 240));
+	    tv2.setBackgroundColor(Color.rgb(255, 255, 255));
+	    tv3.setBackgroundColor(Color.rgb(255, 255, 255));
+	    tv4.setBackgroundColor(Color.rgb(255, 255, 255));
+
+	    ScheduleGVAdapter adapter = new ScheduleGVAdapter(list1,
+		    DesignerInfo.this);
+	    gv.setAdapter(adapter);
+	    gv.setOnItemClickListener(new OnItemClickListener() {
+
+		@Override
+		public void onItemClick(AdapterView<?> parent, View view,
+			int position, long id) {
+		    // TODO Auto-generated method stub
+		    Intent intent = new Intent(DesignerInfo.this,
+			    DesignerReserve.class);
+		    if (date.equals("1")) {
+			if (list1.get(position).get("zt").equals("预约")) {
+			    Toast.makeText(DesignerInfo.this, "时间已被预约，请换个时间！",
+				    Toast.LENGTH_SHORT).show();
+			} else {
+			    System.out.println("1 "
+				    + list1.get(position).get("dian"));
+			    dt = tv1.getText().toString() + "  "
+				    + list1.get(position).get("dian");
+			    timeTv.setText(dt);
+			    intent.putExtra("time", dt);// dt格式为 8.26(一)
+			    intent.putExtra("zid", zid);
+			    intent.putExtra("zrid", zrid);
+			    intent.putExtra("name", _name);
+			    intent.putExtra("type", type);
+			    intent.putExtra("sqid", sqId);
+			    intent.putExtra("sel", addrSel);// addrSel, 地址选择方式，
+							    // 1位只有商圈， 2位详细地址
+			    intent.putExtra("address", address);// addrSel=1时，
+								// 需要手填详细地址，
+								// 2为选择详细地址
+			    startActivity(intent);
+			    dismiss();
+			}
+
+		    } else if (date.equals("2")) {
+			if (list2.get(position).get("zt").equals("预约")) {
+			    Toast.makeText(DesignerInfo.this, "时间已被预约，请换个时间！",
+				    Toast.LENGTH_SHORT).show();
+			} else {
+			    System.out.println("2 "
+				    + list2.get(position).get("dian"));
+			    dt = tv2.getText().toString() + "  "
+				    + list2.get(position).get("dian");
+			    timeTv.setText(dt);
+			    intent.putExtra("time", dt);// dt格式为 8.26(一)
+			    intent.putExtra("zid", zid);
+			    intent.putExtra("zrid", zrid);
+			    intent.putExtra("name", _name);
+			    intent.putExtra("type", type);
+			    intent.putExtra("sqid", sqId);
+			    intent.putExtra("sel", addrSel);// addrSel, 地址选择方式，
+							    // 1位只有商圈， 2位详细地址
+			    intent.putExtra("address", address);// addrSel=1时，
+								// 需要手填详细地址，
+								// 2为选择详细地址
+			    startActivity(intent);
+			    dismiss();
+			}
+
+		    } else if (date.equals("3")) {
+			if (list3.get(position).get("zt").equals("预约")) {
+			    Toast.makeText(DesignerInfo.this, "时间已被预约，请换个时间！",
+				    Toast.LENGTH_SHORT).show();
+			} else {
+			    System.out.println("3 "
+				    + list3.get(position).get("dian"));
+			    dt = tv3.getText().toString() + "  "
+				    + list3.get(position).get("dian");
+			    timeTv.setText(dt);
+			    intent.putExtra("time", dt);// dt格式为 8.26(一)
+			    intent.putExtra("zid", zid);
+			    intent.putExtra("zrid", zrid);
+			    intent.putExtra("name", _name);
+			    intent.putExtra("type", type);
+			    intent.putExtra("sqid", sqId);
+			    intent.putExtra("sel", addrSel);// addrSel, 地址选择方式，
+							    // 1位只有商圈， 2位详细地址
+			    intent.putExtra("address", address);// addrSel=1时，
+								// 需要手填详细地址，
+								// 2为选择详细地址
+			    startActivity(intent);
+			    dismiss();
+			}
+
+		    } else {
+			if (list4.get(position).get("zt").equals("预约")) {
+			    Toast.makeText(DesignerInfo.this, "时间已被预约，请换个时间！",
+				    Toast.LENGTH_SHORT).show();
+			} else {
+			    System.out.println("4 "
+				    + list4.get(position).get("dian"));
+			    dt = tv4.getText().toString() + "  "
+				    + list4.get(position).get("dian");
+			    timeTv.setText(dt);
+			    intent.putExtra("time", dt);// dt格式为 8.26(一)
+			    intent.putExtra("zid", zid);
+			    intent.putExtra("zrid", zrid);
+			    intent.putExtra("name", _name);
+			    intent.putExtra("type", type);
+			    intent.putExtra("sqid", sqId);
+			    intent.putExtra("sel", addrSel);// addrSel, 地址选择方式，
+							    // 1位只有商圈， 2位详细地址
+			    intent.putExtra("address", address);// addrSel=1时，
+								// 需要手填详细地址，
+								// 2为选择详细地址
+			    startActivity(intent);
+			    dismiss();
+			}
+
+		    }
+
+		}
+	    });
+
+	    setWidth(LayoutParams.FILL_PARENT);
+	    setHeight(LayoutParams.WRAP_CONTENT);
+	    // setBackgroundDrawable(new BitmapDrawable());
+	    setFocusable(true);
+	    setOutsideTouchable(true);
+	    setContentView(view);
+	    showAtLocation(parent, Gravity.BOTTOM, 0, -100);
+	    update();
+
+	    tv1.setOnClickListener(new OnClickListener() {
+
+		@Override
+		public void onClick(View v) {
+		    // TODO Auto-generated method stub
+		    tv1.setBackgroundColor(Color.rgb(240, 240, 240));
+		    tv2.setBackgroundColor(Color.rgb(255, 255, 255));
+		    tv3.setBackgroundColor(Color.rgb(255, 255, 255));
+		    tv4.setBackgroundColor(Color.rgb(255, 255, 255));
+		    ScheduleGVAdapter adapter = new ScheduleGVAdapter(list1,
+			    DesignerInfo.this);
+		    gv.setAdapter(adapter);
+		    date = "1";
+		}
+	    });
+	    tv2.setOnClickListener(new OnClickListener() {
+
+		@Override
+		public void onClick(View v) {
+		    // TODO Auto-generated method stub
+		    tv1.setBackgroundColor(Color.rgb(255, 255, 255));
+		    tv2.setBackgroundColor(Color.rgb(240, 240, 240));
+		    tv3.setBackgroundColor(Color.rgb(255, 255, 255));
+		    tv4.setBackgroundColor(Color.rgb(255, 255, 255));
+		    ScheduleGVAdapter adapter = new ScheduleGVAdapter(list2,
+			    DesignerInfo.this);
+		    gv.setAdapter(adapter);
+		    date = "2";
+		}
+	    });
+	    tv3.setOnClickListener(new OnClickListener() {
+
+		@Override
+		public void onClick(View v) {
+		    // TODO Auto-generated method stub
+		    tv1.setBackgroundColor(Color.rgb(255, 255, 255));
+		    tv2.setBackgroundColor(Color.rgb(255, 255, 255));
+		    tv3.setBackgroundColor(Color.rgb(240, 240, 240));
+		    tv4.setBackgroundColor(Color.rgb(255, 255, 255));
+		    ScheduleGVAdapter adapter = new ScheduleGVAdapter(list3,
+			    DesignerInfo.this);
+		    gv.setAdapter(adapter);
+		    date = "3";
+		}
+	    });
+	    tv4.setOnClickListener(new OnClickListener() {
+
+		@Override
+		public void onClick(View v) {
+		    // TODO Auto-generated method stub
+		    tv1.setBackgroundColor(Color.rgb(255, 255, 255));
+		    tv2.setBackgroundColor(Color.rgb(255, 255, 255));
+		    tv3.setBackgroundColor(Color.rgb(255, 255, 255));
+		    tv4.setBackgroundColor(Color.rgb(240, 240, 240));
+		    ScheduleGVAdapter adapter = new ScheduleGVAdapter(list4,
+			    DesignerInfo.this);
+		    gv.setAdapter(adapter);
+		    date = "4";
+		}
+	    });
+
+	}
+    }
+
+    class TimeAsync extends AsyncTask<String, Void, String> {
+	private CustomProgressDialog pd;
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see android.os.AsyncTask#onPreExecute()
+	 */
+	@Override
+	protected void onPreExecute() {
+	    // TODO Auto-generated method stub
+	    super.onPreExecute();
+	    pd = CustomProgressDialog.createDialog(DesignerInfo.this);
+	    pd.show();
+	    list1 = new ArrayList<HashMap<String, String>>();
+	    list2 = new ArrayList<HashMap<String, String>>();
+	    list3 = new ArrayList<HashMap<String, String>>();
+	    list4 = new ArrayList<HashMap<String, String>>();
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see android.os.AsyncTask#doInBackground(Params[])
+	 */
+	@Override
+	protected String doInBackground(String... params) {
+	    // TODO Auto-generated method stub
+	    String url = Config.TIME_TABLE_URL + params[0];
+	    Log.e("url", url);
+	    String data = new Tools().getURL(url);
+	    System.out.println(data);
+	    String code = "";
+	    try {
+		JSONObject jObject = new JSONObject(data);
+		JSONObject result = jObject.getJSONObject("result");
+		code = result.getString("code");
+		if (code.equals("1")) {
+		    JSONObject job = jObject.getJSONObject("data");
+		    date1 = job.getString("tian1");
+		    date2 = job.getString("tian2");
+		    date3 = job.getString("tian3");
+		    date4 = job.getString("tian4");
+
+		    JSONArray jt = job.getJSONArray("jintian");
+		    for (int i = 0, j = jt.length(); i < j; i++) {
+			JSONObject job1 = jt.optJSONObject(i);
+			HashMap<String, String> hashMap = new HashMap<String, String>();
+			hashMap.put("dian", job1.getString("dian"));
+			hashMap.put("zt", job1.getString("zt"));
+
+			list1.add(hashMap);
+		    }
+
+		    JSONArray mt = job.getJSONArray("mingtian");
+		    for (int i = 0, j = mt.length(); i < j; i++) {
+			JSONObject job2 = mt.optJSONObject(i);
+			HashMap<String, String> hashMap = new HashMap<String, String>();
+			hashMap.put("dian", job2.getString("dian"));
+			hashMap.put("zt", job2.getString("zt"));
+
+			list2.add(hashMap);
+		    }
+
+		    JSONArray ht = job.getJSONArray("houtian");
+		    for (int i = 0, j = ht.length(); i < j; i++) {
+			JSONObject job3 = ht.optJSONObject(i);
+			HashMap<String, String> hashMap = new HashMap<String, String>();
+			hashMap.put("dian", job3.getString("dian"));
+			hashMap.put("zt", job3.getString("zt"));
+
+			list3.add(hashMap);
+		    }
+
+		    JSONArray dht = job.getJSONArray("dahoutian");
+		    for (int i = 0, j = dht.length(); i < j; i++) {
+			JSONObject job4 = dht.optJSONObject(i);
+			HashMap<String, String> hashMap = new HashMap<String, String>();
+			hashMap.put("dian", job4.getString("dian"));
+			hashMap.put("zt", job4.getString("zt"));
+
+			list4.add(hashMap);
+		    }
+
+		}
+	    } catch (JSONException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	    }
+	    return code;
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see android.os.AsyncTask#onPostExecute(java.lang.Object)
+	 */
+	@Override
+	protected void onPostExecute(String result) {
+	    // TODO Auto-generated method stub
+	    super.onPostExecute(result);
+	    pd.dismiss();
+	    if (result.equals("1")) {
+		new PopupWindows(DesignerInfo.this, parent);
+	    } else {
+		Toast.makeText(DesignerInfo.this, "获取时间表失败，请重试！",
+			Toast.LENGTH_SHORT).show();
+	    }
+	}
+
+    }
+
+}

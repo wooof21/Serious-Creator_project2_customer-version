@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f4f4f4"
+    android:orientation="vertical" >
+
+    <FrameLayout
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#101119" >
+
+        <ImageView
+            android:id="@+id/title_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/back" />
+
+        <TextView
+            android:id="@+id/title_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:paddingBottom="7dp"
+            android:paddingTop="7dp"
+            android:text="美咖来了"
+            android:textColor="#ffffff"
+            android:textSize="18sp" />
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        android:gravity="center"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp"
+        android:text="投保须知&amp;保险条款"
+        android:textColor="#101119"
+        android:textSize="16sp" />
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="10dp"
+                android:paddingLeft="10dp"
+                android:paddingTop="10dp"
+                android:text="1. 总则"
+                android:textColor="#101119"
+                android:textSize="16sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="3dp"
+                android:paddingLeft="15dp"
+                android:text="1.1 合同构成"
+                android:textColor="#101119"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="5dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:text="本附加条款须附加于各种意外伤害保险合同（以下简称“主险合同”）。\n 本附加险合同与主险合同相抵触之处，以本附加险合同为准。本附加险合同未约定事项，以主险合同为准。主险合同效力终止，本附加险合同效力亦同时终止；主险合同无效，本附加险合同亦无效。 凡涉及本附加险合同的约定，均应采用书面形式。"
+                android:textColor="#101119"
+                android:textSize="11sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="3dp"
+                android:paddingLeft="15dp"
+                android:text="1.2 受益人"
+                android:textColor="#101119"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="5dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:text="本附加险合同保险金的受益人为被保险人本人。被保险人死亡的，则受益人同“主险合同”约定。"
+                android:textColor="#101119"
+                android:textSize="11sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="10dp"
+                android:paddingLeft="10dp"
+                android:paddingTop="5dp"
+                android:text="2. 保障内容"
+                android:textColor="#101119"
+                android:textSize="16sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="3dp"
+                android:paddingLeft="15dp"
+                android:text="2.1 保险责任"
+                android:textColor="#101119"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="5dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:text="在本附加险合同的保险期间内，被保险人遭受中华人民共和国刑法规定的侵犯公民人身权利的犯罪行为（释义见4.1），且经有关司法机关认定达到轻伤及以上（释义见4.2），但未造成身故或《人身保险伤残评定标准》（释义见4.3）所列伤残程度之一的，则保险人根据本附加险合同约定的保险金额一次性给付保险金。保险人给付保险金后，保险人对被保险人的保险责任终止。"
+                android:textColor="#101119"
+                android:textSize="11sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="3dp"
+                android:paddingLeft="15dp"
+                android:text="2.2 保险金额"
+                android:textColor="#101119"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="5dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:text="保险金额由投保人和保险人双方约定，并在保险合同中载明。且一经确定，在保险期间内不得变更。"
+                android:textColor="#101119"
+                android:textSize="11sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="3dp"
+                android:paddingLeft="15dp"
+                android:text="2.3 保险期间"
+                android:textColor="#101119"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="5dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:text="除另有约定外，本附加险合同的保险期间与主险合同一致。"
+                android:textColor="#101119"
+                android:textSize="11sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="3dp"
+                android:paddingLeft="15dp"
+                android:text="2.4 除外责任"
+                android:textColor="#101119"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="5dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:text="除主险合同约定的除外责任以外，发生以下情形的，保险人不承担赔偿责任："
+                android:textColor="#101119"
+                android:textSize="11sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="5dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="15dp"
+                android:text="（1）侵害行为不属于刑法规定的侵犯公民人身权利的犯罪行为；\n（2）侵害行为未导致轻伤及以上损害结果的；\n（3）侵害行为造成被保险人身故或达到《人身保险伤残评定标准》所列伤残程度之一的。"
+                android:textColor="#101119"
+                android:textSize="11sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="10dp"
+                android:paddingLeft="10dp"
+                android:paddingTop="5dp"
+                android:text="3. 保险金申请"
+                android:textColor="#101119"
+                android:textSize="16sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="5dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:text="保险金申请人向保险人申请给付保险金时，应提交以下材料。保险金申请人因特殊原因不能提供以下材料的，应提供其他合法有效的材料。保险金申请人未能提供有关材料，导致保险人无法核实该申请的真实性的，保险人对无法核实部分不承担给付保险金的责任。"
+                android:textColor="#101119"
+                android:textSize="11sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="5dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="15dp"
+                android:text="（1）保险金给付申请书；\n（2）保险合同凭据；\n（3）被保险人的身份证明；\n（4）公安机关出具的刑事案件受理单；\n（5）公安机关或其他司法部门认可或指定的鉴定机构出具的验伤报告；\n（6）其他保险人合理要求的，与确认保险事故的性质、原因等有关的其他证明和资料。\n（7）若保险金申请人委托他人申请的，还应提供授权委托书原件、委托人和受托人的身份证明等相关证明文件。受益人为无民事行为能力人或者限制民事行为能力人的，由其监护人代为申领保险金，并需要提供监护人的身份证明等资料。"
+                android:textColor="#101119"
+                android:textSize="11sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="10dp"
+                android:paddingLeft="10dp"
+                android:paddingTop="5dp"
+                android:text="4. 释义"
+                android:textColor="#101119"
+                android:textSize="16sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="3dp"
+                android:paddingLeft="15dp"
+                android:text="4.1 侵犯公民人身权利的犯罪行为"
+                android:textColor="#101119"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="5dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:text="指发生符合《中华人民共和国刑法》第四章中有关“侵犯公民人身权利”的犯罪行为，包括故意、过失伤害、强奸、非法拘禁、绑架或其他本保险合同载明的情形。"
+                android:textColor="#101119"
+                android:textSize="11sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="3dp"
+                android:paddingLeft="15dp"
+                android:text="4.2 轻伤及以上"
+                android:textColor="#101119"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="5dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:text="指根据中华人民共和国最高人民法院、最高人民检察院、公安部及司法部等联合下发的《人体损伤程度鉴定标准》或其他出险时有效的鉴定标准鉴定为轻伤及以上的情形。"
+                android:textColor="#101119"
+                android:textSize="11sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="3dp"
+                android:paddingLeft="15dp"
+                android:text="4.3 《人身保险伤残评定标准》"
+                android:textColor="#101119"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="5dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:text="指中国保险行业协会发布的人身保险伤残程度评定与保险金给付比例标准，详见《关于印发&lt;人身保险伤残评定标准>的通知》（中保协发【2013】88号）。"
+                android:textColor="#101119"
+                android:textSize="11sp" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

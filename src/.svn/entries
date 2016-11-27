@@ -1,0 +1,107 @@
+10
+
+dir
+2
+https://192.168.200.99:10000/svn/meikalaile/MKComing_C/src
+https://192.168.200.99:10000/svn/meikalaile
+
+
+
+2015-08-09T05:24:17.830751Z
+2
+chuliming
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+feb15b8d-4fb2-9e4c-9032-201c3c535c51
+
+.define
+file
+
+
+
+
+2015-08-04T05:26:56.481000Z
+d41d8cd98f00b204e9800998ecf8427e
+2015-08-09T05:24:17.830751Z
+2
+chuliming
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+0
+
+adapter
+dir
+
+alipay
+dir
+
+cn
+dir
+
+com
+dir
+
+designers
+dir
+
+fragments
+dir
+
+getui
+dir
+
+login
+dir
+
+model
+dir
+
+order
+dir
+
+popup
+dir
+
+tools
+dir
+
+upload
+dir
+
+view
+dir
+
+vip
+dir
+

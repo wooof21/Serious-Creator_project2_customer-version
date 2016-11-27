@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f4f4f4"
+    android:orientation="vertical" >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/dhk_top"
+        android:gravity="center"
+        android:text="美咖来了初次体验券"
+        android:textColor="#ffffff"
+        android:textSize="14sp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="20dp"
+        android:background="#d1d1d1" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="20dp"
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp"
+            android:text="序列号码："
+            android:textSize="14sp" />
+        
+        <EditText 
+            android:id="@+id/dhk_num"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@null"
+            android:ems="10"
+            android:gravity="center_vertical"
+            />
+    </LinearLayout>
+    
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#d1d1d1" />
+    
+    
+    <TextView
+        android:id="@+id/dhk_submit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/tvbg_pink"
+        android:gravity="center"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp"
+        android:text="立即兑换"
+        android:textColor="#ffffff"
+        android:textSize="16sp" />
+    
+    <TextView 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="输入序列号兑换一次价值99元\n高级造型师上门服务的免费体验卡\n每个账号只允许兑换一次免费体验卡\n每个免费体验卡序列号只可兑换一次"
+        android:textSize="12sp"
+        android:layout_gravity="center_horizontal"
+        android:textColor="#a1a1a1"
+        android:gravity="center"
+        android:layout_marginTop="20dp"
+        />
+
+</LinearLayout>

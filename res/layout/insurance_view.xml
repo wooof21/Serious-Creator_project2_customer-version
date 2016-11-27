@@ -1,0 +1,440 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f4f4f4" >
+
+    <FrameLayout
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#101119" >
+
+        <ImageView
+            android:id="@+id/title_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/back" />
+
+        <TextView
+            android:id="@+id/title_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:paddingBottom="7dp"
+            android:paddingTop="7dp"
+            android:text="美咖来了"
+            android:textColor="#ffffff"
+            android:textSize="18sp" />
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/title"
+        android:background="#ffffff"
+        android:gravity="center"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp"
+        android:text="投保须知&amp;保险条款"
+        android:textColor="#101119"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/textView1"
+        android:background="#d1d1d1" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/textView2"
+        android:layout_marginTop="5dp" >
+
+        <TextView
+            android:layout_width="2dp"
+            android:layout_height="match_parent"
+            android:background="#101119" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#ffffff"
+            android:ems="8"
+            android:paddingBottom="8dp"
+            android:paddingLeft="15dp"
+            android:paddingTop="8dp"
+            android:text="投保须知："
+            android:textColor="#101119"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/linearLayout1" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/linearLayout1"
+                android:layout_marginTop="10dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:text="1、本保险限本人投保，投保人与被保险人应当为同一人，年龄为18-65周岁；\n2、本保险承保被保险人在“河狸家”自有经营的电子商务平台以及其它渠道预约的“手艺人”在上门服务期间，由于其过失或不当行为等导致保险责任范围内的人身伤害和/或财产损失事故的损失。保险条款与投保须知就承保范围、保障内容等不一致的，以投保须知约定的为准；\n3、本保单保险期间约定如下：\n自“手艺人”实际到达被保险人指定地点之时起至 “手艺人”实际完成服务并离开被保险人指定地点之时；\n4、符合条件的订单，一经投保即行生效，保险人不接受任何形式的退保；\n5、在保险期间内，每个订单每个被保险人限投保一份，重复投保的无效，且保险人不承担赔偿责任；\n6、本保险产品包括“意外伤害保险”、“个人财产及随身物品损失保险”以及“人身权利侵害保险”三部分保障。保险人对在保险期间内仅对因“手艺人”的原因导致的保险责任范围的损失、费用在约定的保险金额内承担赔偿或给付责任（保险金额以签发的电子保单记载的为准）。非保险期间内或非因“手艺人”原因导致的任何责任、损失或费用，保险人不承担任何赔偿责任；\n7、确认投保本保险产品前，请您务必仔细阅读并充分理解《投保须知》和《保险条款》等的内容及含义，特别是其中有关投保方式、赔付条件、理赔规则、退改条件，以及保险合同的除外责任等的约定。如何任何疑问，可致电众安保险客服热线咨询或登录众安官网了解相关内容； \n8、 如对上述保险产品内容有任何疑问，请您拨打众安保险24小时客服热线：400-1071-377。"
+                android:textColor="#101119"
+                android:textSize="11sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="5dp"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#d1d1d1" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="2.04" >
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.01"
+                        android:background="#d1d1d1" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:paddingBottom="5dp"
+                        android:paddingTop="5dp"
+                        android:text="项目保障"
+                        android:textColor="#101119"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.02"
+                        android:background="#d1d1d1" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:paddingBottom="5dp"
+                        android:paddingTop="5dp"
+                        android:text="保障额度"
+                        android:textColor="#101119"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.01"
+                        android:background="#d1d1d1" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#d1d1d1" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="2.04" >
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.01"
+                        android:background="#d1d1d1" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:paddingBottom="5dp"
+                        android:paddingTop="5dp"
+                        android:text="众安意外伤害保险"
+                        android:textColor="#101119"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.02"
+                        android:background="#d1d1d1" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:paddingBottom="5dp"
+                        android:paddingTop="5dp"
+                        android:text="50.000"
+                        android:textColor="#101119"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.01"
+                        android:background="#d1d1d1" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#d1d1d1" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="2.04" >
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.01"
+                        android:background="#d1d1d1" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:paddingBottom="5dp"
+                        android:paddingTop="5dp"
+                        android:text="众安附加人身权利侵害保险"
+                        android:textColor="#101119"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.02"
+                        android:background="#d1d1d1" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:paddingBottom="5dp"
+                        android:paddingTop="5dp"
+                        android:text="30.000"
+                        android:textColor="#101119"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.01"
+                        android:background="#d1d1d1" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#d1d1d1" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="2.04" >
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.01"
+                        android:background="#d1d1d1" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:paddingBottom="5dp"
+                        android:paddingTop="5dp"
+                        android:text="众安附加个人财产及随身物品损失保险"
+                        android:textColor="#101119"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.02"
+                        android:background="#d1d1d1" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:paddingBottom="5dp"
+                        android:paddingTop="5dp"
+                        android:text="5.000"
+                        android:textColor="#101119"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.01"
+                        android:background="#d1d1d1" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#d1d1d1" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp" >
+
+                <TextView
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="#101119" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="#ffffff"
+                    android:ems="8"
+                    android:paddingBottom="8dp"
+                    android:paddingLeft="15dp"
+                    android:paddingTop="8dp"
+                    android:text="保险条款："
+                    android:textColor="#101119"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="25dp"
+                android:text="点击查看条款详情："
+                android:textColor="#505555"
+                android:textSize="15sp" />
+            
+            
+            <TextView 
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#d1d1d1"
+                android:layout_marginTop="15dp"
+                />
+            <TextView 
+                android:id="@+id/i_view_tv1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="众安在线财产保险股份有限公司意外伤害保险条款"
+                android:textSize="14sp"
+                android:textColor="#101119"
+                android:paddingTop="15dp"
+                android:paddingBottom="15dp"
+                android:gravity="center"
+                android:background="#ffffff"
+                />
+            <TextView 
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#d1d1d1"
+                />
+            
+            
+             <TextView 
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#d1d1d1"
+                android:layout_marginTop="15dp"
+                />
+            <TextView 
+                android:id="@+id/i_view_tv2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="众安在线财产保险股份有限公司附加人身权利侵害保险条款"
+                android:textSize="14sp"
+                android:textColor="#101119"
+                android:paddingTop="15dp"
+                android:paddingBottom="15dp"
+                android:gravity="center"
+                android:background="#ffffff"
+                />
+            <TextView 
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#d1d1d1"
+                />
+            
+            
+             <TextView 
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#d1d1d1"
+                android:layout_marginTop="15dp"
+                />
+            <TextView 
+                android:id="@+id/i_view_tv3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="众安在线财产保险股份有限公司附加个人财产及随身物品损失保险条款"
+                android:textSize="14sp"
+                android:textColor="#101119"
+                android:paddingTop="15dp"
+                android:paddingBottom="15dp"
+                android:gravity="center"
+                android:background="#ffffff"
+                />
+            <TextView 
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#d1d1d1"
+                />
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

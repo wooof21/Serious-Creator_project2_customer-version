@@ -1,0 +1,1035 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f4f4f4"
+    android:orientation="vertical" >
+
+    <FrameLayout
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#101119" >
+
+        <ImageView
+            android:id="@+id/title_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/back" />
+
+        <TextView
+            android:id="@+id/title_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:paddingBottom="7dp"
+            android:paddingTop="7dp"
+            android:text="美咖来了"
+            android:textColor="#ffffff"
+            android:textSize="18sp" />
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        android:gravity="center"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp"
+        android:text="投保须知&amp;保险条款"
+        android:textColor="#101119"
+        android:textSize="16sp" />
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+            
+            <LinearLayout 
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                >
+                            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="10dp"
+                android:paddingLeft="10dp"
+                android:paddingTop="10dp"
+                android:text="1. 总则"
+                android:textColor="#101119"
+                android:textSize="16sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="3dp"
+                android:paddingLeft="15dp"
+                android:text="1.1 合同构成"
+                android:textColor="#101119"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="5dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:text="本附加条款须附加于各种意外伤害保险合同（以下简称“主险合同”）。本附加险合同与主险合同相抵触之处，以本附加险合同为准。本附加险合同未约定事项，以主险合同为准。主险合同效力终止，本附加险合同效力亦同时终止；主险合同无效，本附加险合同亦无效。\n凡涉及本附加险合同的约定，均应采用书面形式。"
+                android:textColor="#101119"
+                android:textSize="11sp" />
+                
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="10dp"
+                android:paddingLeft="10dp"
+                android:paddingTop="5dp"
+                android:text="2. 保险标的"
+                android:textColor="#101119"
+                android:textSize="16sp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="3dp"
+                android:paddingLeft="15dp"
+                android:text="本附加险合同的保险标的为被保险人所有的下列财产。"
+                android:textColor="#101119"
+                android:textSize="14sp" />
+            
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="3dp"
+                android:paddingLeft="15dp"
+                android:text="2.1 个人财产"
+                android:textColor="#101119"
+                android:textSize="14sp" />
+            
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="5dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:text="（1）房屋及其室内附属设备（如固定装置的水暖、气暖、卫生、供水、管道煤气及供电设备、厨房配套的设备等）；\n（2）室内装潢；\n（3）室内财产："
+                android:textColor="#101119"
+                android:textSize="11sp" />
+            
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="5dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="15dp"
+                android:text="a.家用电器和文体娱乐用品；\nb.衣物、鞋帽、箱包和床上用品；\nc.手机、电脑等便携设备；\nd.现金、金银、珠宝首饰或饰物。"
+                android:textColor="#101119"
+                android:textSize="11sp" />
+            
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="3dp"
+                android:paddingLeft="15dp"
+                android:text="2.2 随身物品"
+                android:textColor="#101119"
+                android:textSize="14sp" />
+            
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="5dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:text="（1）现金、金银、珠宝首饰或饰物；\n（2）手机、电脑等便携设备；\n（3）其他随身物品。"
+                android:textColor="#101119"
+                android:textSize="11sp" />
+            
+            
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="10dp"
+                android:paddingLeft="10dp"
+                android:paddingTop="5dp"
+                android:text="3. 保障内容"
+                android:textColor="#101119"
+                android:textSize="16sp" />
+            
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="3dp"
+                android:paddingLeft="15dp"
+                android:text="3.1 保险责任"
+                android:textColor="#101119"
+                android:textSize="14sp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="5dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:text="在本附加险合同保险期间内，被保险人合法拥有的个人财产及随身物品遭受抢劫、抢夺、盗窃，或因第三方人为原因导致受损的，保险人有权选择如下方式进行赔偿："
+                android:textColor="#101119"
+                android:textSize="11sp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="5dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="15dp"
+                android:text="（1）货币赔偿，根据受损保险标的的实际损失，按照本附加险合同的约定，以支付保险金的方式赔偿；\n（2）实物修复，保险人自行或委托他人修理修复受损保险标的；\n（3）实物赔偿，保险人以同类型或具有同种性能的实物替换灭失或受损的保险标的。\n被保险人丧失或受损的个人财产或随身物品，保险人可根据其磨损及折旧程度做出适当扣减或进行修复。\n当计算应付的赔偿数额时，保险人将根据丧失或受损的保险标的的使用时间和磨损情况进行折旧处理。折旧数额将以个人财产或随身物品的全部使用年限为基础，并按照《折旧计算表》（见释义7.1）或投保人与保险人另行约定的方式计算。"
+                android:textColor="#101119"
+                android:textSize="11sp" />
+            
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="3dp"
+                android:paddingLeft="15dp"
+                android:text="3.2 责任免除"
+                android:textColor="#101119"
+                android:textSize="14sp" />
+            
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="3dp"
+                android:paddingLeft="20dp"
+                android:text="3.2.1 责任免除"
+                android:textColor="#101119"
+                android:textSize="14sp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="3dp"
+                android:paddingLeft="20dp"
+                android:text="因下列原因造成的损失，保险人不承担赔偿责任："
+                android:textColor="#101119"
+                android:textSize="14sp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="3dp"
+                android:paddingLeft="25dp"
+                android:text="（1）投保人、被保险人，及其商业合作伙伴、亲属、家庭成员、共同居住人、家庭雇佣人员的故意或重大过失行为；\n（2）正常的磨损、折旧、虫蛀、发霉、腐烂、侵蚀、受潮、逐渐氧化、光线作用、或在加热、干燥、清洁、染色、更换或维修过程中、或因刮损、出现凹痕、机械或电力故障、使用不当、手工或设计欠佳、使用有问题物料；\n（3）被保险人财产或随身物品自身缺陷、包装不善、保管不善、缺乏看管、使用不当、漏电、自燃等造成的损失；\n（4）放置在无人看管的公共场所；\n（5）主险合同中规定的责任免除事项。"
+                android:textColor="#101119"
+                android:textSize="14sp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="3dp"
+                android:paddingLeft="20dp"
+                android:text="3.2.2 物品除外"
+                android:textColor="#101119"
+                android:textSize="14sp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="3dp"
+                android:paddingLeft="20dp"
+                android:text="任何涉及下列财产的损失，保险人不承担任何赔偿责任："
+                android:textColor="#101119"
+                android:textSize="14sp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="3dp"
+                android:paddingLeft="25dp"
+                android:text="（1）图章、文件；\n（2）易碎或易破物品，如玻璃或水晶等；\n（3）用于商业活动的物品或样品；\n（4）债券、票据、印花、息票、地契、股票、代币卡、银行卡（包括信用卡）、有价证券；\n（5）录制于磁带、记录卡、磁盘或其他类似设备上的视频图像、音乐、照片、数据、计算机程序、技术资料、图表等无法鉴定价值的财产；\n（6）日用消耗品、各种交通工具、动物、植物或食品、药物、烟酒；\n（7）机动车辆（及其附件）、摩托车、三轮车、自行车、电动自行车、助动车、船、游艇等各类交通工具、发动机或其它运输工具；\n（8）古董、邮票、艺术品、除金银以外的稀有金属等珍贵财物；\n（9）在用的运动器材；\n（10）政府有关部门征用、占用的房屋，违章建筑、危险建筑、非法占用的财产或木质结构房屋、简易屋棚、禽畜棚、无人居住的房屋，以及存放在其中的财产；\n（11）被保险人代他人保管的财产；\n（12）存放于院内、室内的非机动农机具、农用工具及存放于室内的粮食及农副产品；\n（13）其他不属于第2条所列明的个人财产及随身物品。"
+                android:textColor="#101119"
+                android:textSize="14sp" />
+            
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="3dp"
+                android:paddingLeft="20dp"
+                android:text="3.2.3 费用除外"
+                android:textColor="#101119"
+                android:textSize="14sp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="3dp"
+                android:paddingLeft="20dp"
+                android:text="下列损失和费用，保险人不负责赔偿："
+                android:textColor="#101119"
+                android:textSize="14sp" />
+            
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="3dp"
+                android:paddingLeft="25dp"
+                android:text="（1）任何类型的间接损失、损坏或者折旧；\n（2）罚款、罚金及惩罚性赔偿；\n（3）精神损害赔偿；\n（4）被保险人可从任何第三方获得的赔偿或补偿；\n（5）受损标的在修复或替换过程中，被保险人进行的任何变更、性能增加或改进所产生的额外费用；\n（6）本附加险合同中载明的免赔额（率）。"
+                android:textColor="#101119"
+                android:textSize="14sp" />
+            
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="3dp"
+                android:paddingLeft="15dp"
+                android:text="3.3 保险金额和免赔额（率）"
+                android:textColor="#101119"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="5dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:text="保险人承担赔偿责任应遵照本附加险合同中载明的每件、每套或每对物品的赔偿限额，且对申请理赔的个人财产及随身物品累计赔偿金额以本附加险合同上所载的保险金额为限。\n保险人承担赔偿责任适用本附加险合同对于免赔额的约定，对小于免赔额的损失不承担赔偿责任。"
+                android:textColor="#101119"
+                android:textSize="11sp" />
+            
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="3dp"
+                android:paddingLeft="15dp"
+                android:text="3.4 保险期间"
+                android:textColor="#101119"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="5dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:text="除另有约定外，本附加险合同的保险期间与主险合同的保险期间一致。"
+                android:textColor="#101119"
+                android:textSize="11sp" />
+            
+           <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="10dp"
+                android:paddingLeft="10dp"
+                android:paddingTop="5dp"
+                android:text="4. 被保险人义务"
+                android:textColor="#101119"
+                android:textSize="16sp" />
+           <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="3dp"
+                android:paddingLeft="15dp"
+                android:text="被保险人应妥善管理自己的个人财产及随身物品。保险事故发生后，被保险人应立即向警方或其他有关当局报告，并取得书面证明。同时被保险人必须立即采取措施查寻、保护或挽救该财产或物品，采取必要、合理的措施，使损失减少至最低程度；及时通知保险人，并书面说明事故发生的原因、经过和损失情况；保护事故现场，允许并且协助保险人进行事故调查 。"
+                android:textColor="#101119"
+                android:textSize="14sp" />
+           
+           <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="10dp"
+                android:paddingLeft="10dp"
+                android:paddingTop="5dp"
+                android:text="5. 保险金申请"
+                android:textColor="#101119"
+                android:textSize="16sp" />
+           <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="3dp"
+                android:paddingLeft="15dp"
+                android:text="被保险人向保险人申请给付保险金时，应填写保险金给付申请书，并提交以下材料。因被保险人未能提供有关材料，导致保险人无法核实该申请的真实性的，保险人对无法核实部分不承担给付保险金的责任 。"
+                android:textColor="#101119"
+                android:textSize="14sp" />
+           <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="3dp"
+                android:paddingLeft="20dp"
+                android:text="（1）保险金给付申请书；\n（2）保险合同凭据；\n（3）被保险人身份证明；\n（4）抢劫、抢夺、盗窃现场及受损财物照片或视频，受损物品（如有）；\n（5）警方或其他有关当局的书面证明；\n（6）被抢劫、抢夺、盗窃或第三方人为原因导致损失的个人财产及随身物品清单（包含但不限于名称、型号/编号、金额、购买日期等）及发票或其他购买凭据等；\n（7）其他保险人合理要求的，与确认保险事故的性质、原因、损失程度等有关的其他证明和资料。"
+                android:textColor="#101119"
+                android:textSize="14sp" />
+           
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="10dp"
+                android:paddingLeft="10dp"
+                android:paddingTop="5dp"
+                android:text="6. 其他事项"
+                android:textColor="#101119"
+                android:textSize="16sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="3dp"
+                android:paddingLeft="15dp"
+                android:text="（1）若个人财产或随身物品发生保险责任范围内的损失应由第三方负责赔偿的，被保险人应先向第三方索赔。如被保险人先向保险人提出书面赔偿请求的，保险人在按照本附加险合同予以赔偿后，可在赔偿金额范围内，代位行使被保险人对第三方的请求权，被保险人应协助保险人行使该项权利，其费用由保险人负担。\n（2）被保险人个人财产或随身物品损失后有残余价值的，在双方协商就该价值确定金额后，在计算损失时作相应扣除，残余的受损部分仍归被保险人所有。\n（3）被保险人个人财产或随身物品发生保险事故，保险人做出赔偿后，该财物的所有权属于保险人。如果保险人已赔付的个人财产或随身物品被发现或归还，或被保险人从任何第三方获得赔偿的，则被保险人应向保险人退回已领取的保险金。\n（4）保险事故发生时，如果存在重复保险，保险人按照本附加险合同的保险金额与其他保险合同及本附加险合同相应保险金额总和的比例承担赔偿责任。其他保险人应承担的赔偿金额，本保险人不负责垫付。若被保险人未如实告知导致保险人多支付赔偿金的，保险人有权向被保险人追回多支付的部分。"
+                android:textColor="#101119"
+                android:textSize="14sp" />
+
+            </LinearLayout>
+             <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="10dp"
+                android:paddingLeft="10dp"
+                android:paddingTop="5dp"
+                android:text="7. 释义"
+                android:textColor="#101119"
+                android:textSize="16sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="3dp"
+                android:paddingLeft="15dp"
+                android:text="7.1 折旧计算表"
+                android:textColor="#101119"
+                android:textSize="14sp" />
+            
+            <LinearLayout 
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:orientation="vertical"
+                >
+                <TextView 
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#d1d1d1"
+                    />
+                <LinearLayout 
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="9.08"
+                    >
+                    <TextView 
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.01"
+                        android:background="#d1d1d1"
+                        />
+                    <TextView 
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="序号"
+                        android:textSize="14sp"
+                        android:textColor="#101119"
+                        android:paddingBottom="5dp"
+                        android:paddingTop="5dp"
+                        android:gravity="center"
+                        />
+                    <TextView 
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.02"
+                        android:background="#d1d1d1"
+                        />
+                    <TextView 
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+                        android:text="项目"
+                        android:textSize="14sp"
+                        android:textColor="#101119"
+                        android:paddingBottom="5dp"
+                        android:paddingTop="5dp"
+                        android:gravity="center"
+                        />
+                    <TextView 
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.02"
+                        android:background="#d1d1d1"
+                        />
+                    <TextView 
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:text="扣除比例"
+                        android:textSize="14sp"
+                        android:textColor="#101119"
+                        android:paddingBottom="5dp"
+                        android:paddingTop="5dp"
+                        android:gravity="center"
+                        />
+                    <TextView 
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.02"
+                        android:background="#d1d1d1"
+                        />
+                    <TextView 
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+                        android:text="备注"
+                        android:textSize="14sp"
+                        android:textColor="#101119"
+                        android:paddingBottom="5dp"
+                        android:paddingTop="5dp"
+                        android:gravity="center"
+                        />
+                    <TextView 
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.01"
+                        android:background="#d1d1d1"
+                        />
+                </LinearLayout>
+                <TextView 
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#d1d1d1"
+                    />
+                <LinearLayout 
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="9.08"
+                    >
+                    <TextView 
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.01"
+                        android:background="#d1d1d1"
+                        />
+                    <TextView 
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="1"
+                        android:textSize="14sp"
+                        android:textColor="#101119"
+                        android:paddingBottom="5dp"
+                        android:paddingTop="5dp"
+                        android:gravity="center"
+                        />
+                    <TextView 
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.02"
+                        android:background="#d1d1d1"
+                        />
+                    <TextView 
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+                        android:text="衣物"
+                        android:textSize="14sp"
+                        android:textColor="#101119"
+                        android:paddingBottom="5dp"
+                        android:paddingTop="5dp"
+                        android:gravity="center"
+                        />
+                    <TextView 
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.02"
+                        android:background="#d1d1d1"
+                        />
+                    <TextView 
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:text="每年20%"
+                        android:textSize="14sp"
+                        android:textColor="#101119"
+                        android:paddingBottom="5dp"
+                        android:paddingTop="5dp"
+                        android:gravity="center"
+                        />
+                    <TextView 
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.02"
+                        android:background="#d1d1d1"
+                        />
+                    <TextView 
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+                        android:text=""
+                        android:textSize="14sp"
+                        android:textColor="#101119"
+                        android:paddingBottom="5dp"
+                        android:paddingTop="5dp"
+                        android:gravity="center"
+                        />
+                    <TextView 
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.01"
+                        android:background="#d1d1d1"
+                        />
+                </LinearLayout>
+                
+                
+                
+                <TextView 
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#d1d1d1"
+                    />
+                <LinearLayout 
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="9.08"
+                    >
+                    <TextView 
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.01"
+                        android:background="#d1d1d1"
+                        />
+                    <TextView 
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="2"
+                        android:textSize="14sp"
+                        android:textColor="#101119"
+                        android:paddingBottom="5dp"
+                        android:paddingTop="5dp"
+                        android:gravity="center"
+                        />
+                    <TextView 
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.02"
+                        android:background="#d1d1d1"
+                        />
+                    <TextView 
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+                        android:text="鞋类 "
+                        android:textSize="14sp"
+                        android:textColor="#101119"
+                        android:paddingBottom="5dp"
+                        android:paddingTop="5dp"
+                        android:gravity="center"
+                        />
+                    <TextView 
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.02"
+                        android:background="#d1d1d1"
+                        />
+                    <TextView 
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:text="每年30%"
+                        android:textSize="14sp"
+                        android:textColor="#101119"
+                        android:paddingBottom="5dp"
+                        android:paddingTop="5dp"
+                        android:gravity="center"
+                        />
+                    <TextView 
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.02"
+                        android:background="#d1d1d1"
+                        />
+                    <TextView 
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+                        android:text=""
+                        android:textSize="14sp"
+                        android:textColor="#101119"
+                        android:paddingBottom="5dp"
+                        android:paddingTop="5dp"
+                        android:gravity="center"
+                        />
+                    <TextView 
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.01"
+                        android:background="#d1d1d1"
+                        />
+                </LinearLayout>
+                
+                
+                <TextView 
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#d1d1d1"
+                    />
+                <LinearLayout 
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="9.08"
+                    >
+                    <TextView 
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.01"
+                        android:background="#d1d1d1"
+                        />
+                    <TextView 
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="3"
+                        android:textSize="14sp"
+                        android:textColor="#101119"
+                        android:paddingBottom="5dp"
+                        android:paddingTop="5dp"
+                        android:gravity="center"
+                        />
+                    <TextView 
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.02"
+                        android:background="#d1d1d1"
+                        />
+                    <TextView 
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+                        android:text="化妆品"
+                        android:textSize="14sp"
+                        android:textColor="#101119"
+                        android:paddingBottom="5dp"
+                        android:paddingTop="5dp"
+                        android:gravity="center"
+                        />
+                    <TextView 
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.02"
+                        android:background="#d1d1d1"
+                        />
+                    <TextView 
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:text="每年50%"
+                        android:textSize="14sp"
+                        android:textColor="#101119"
+                        android:paddingBottom="5dp"
+                        android:paddingTop="5dp"
+                        android:gravity="center"
+                        />
+                    <TextView 
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.02"
+                        android:background="#d1d1d1"
+                        />
+                    <TextView 
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+                        android:text=""
+                        android:textSize="14sp"
+                        android:textColor="#101119"
+                        android:paddingBottom="5dp"
+                        android:paddingTop="5dp"
+                        android:gravity="center"
+                        />
+                    <TextView 
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.01"
+                        android:background="#d1d1d1"
+                        />
+                </LinearLayout>
+                
+                
+                
+                <TextView 
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#d1d1d1"
+                    />
+                <LinearLayout 
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="9.08"
+                    >
+                    <TextView 
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.01"
+                        android:background="#d1d1d1"
+                        />
+                    <TextView 
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="4"
+                        android:textSize="14sp"
+                        android:textColor="#101119"
+                        android:paddingBottom="5dp"
+                        android:paddingTop="5dp"
+                        android:gravity="center"
+                        />
+                    <TextView 
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.02"
+                        android:background="#d1d1d1"
+                        />
+                    <TextView 
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+                        android:text="体育用品"
+                        android:textSize="14sp"
+                        android:textColor="#101119"
+                        android:paddingBottom="5dp"
+                        android:paddingTop="5dp"
+                        android:gravity="center"
+                        />
+                    <TextView 
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.02"
+                        android:background="#d1d1d1"
+                        />
+                    <TextView 
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:text="每年30%"
+                        android:textSize="14sp"
+                        android:textColor="#101119"
+                        android:paddingBottom="5dp"
+                        android:paddingTop="5dp"
+                        android:gravity="center"
+                        />
+                    <TextView 
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.02"
+                        android:background="#d1d1d1"
+                        />
+                    <TextView 
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+                        android:text=""
+                        android:textSize="14sp"
+                        android:textColor="#101119"
+                        android:paddingBottom="5dp"
+                        android:paddingTop="5dp"
+                        android:gravity="center"
+                        />
+                    <TextView 
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.01"
+                        android:background="#d1d1d1"
+                        />
+                </LinearLayout>
+                
+                
+                
+                <TextView 
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#d1d1d1"
+                    />
+                <LinearLayout 
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="9.08"
+                    >
+                    <TextView 
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.01"
+                        android:background="#d1d1d1"
+                        />
+                    <TextView 
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="5"
+                        android:textSize="14sp"
+                        android:textColor="#101119"
+                        android:paddingBottom="5dp"
+                        android:paddingTop="5dp"
+                        android:gravity="center"
+                        />
+                    <TextView 
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.02"
+                        android:background="#d1d1d1"
+                        />
+                    <TextView 
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+                        android:text="箱包，背包和旅行包"
+                        android:textSize="14sp"
+                        android:textColor="#101119"
+                        android:paddingBottom="5dp"
+                        android:paddingTop="5dp"
+                        android:gravity="center"
+                        />
+                    <TextView 
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.02"
+                        android:background="#d1d1d1"
+                        />
+                    <TextView 
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:text="每年10%"
+                        android:textSize="14sp"
+                        android:textColor="#101119"
+                        android:paddingBottom="5dp"
+                        android:paddingTop="5dp"
+                        android:gravity="center"
+                        />
+                    <TextView 
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.02"
+                        android:background="#d1d1d1"
+                        />
+                    <TextView 
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+                        android:text=""
+                        android:textSize="14sp"
+                        android:textColor="#101119"
+                        android:paddingBottom="5dp"
+                        android:paddingTop="5dp"
+                        android:gravity="center"
+                        />
+                    <TextView 
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.01"
+                        android:background="#d1d1d1"
+                        />
+                </LinearLayout>
+                
+                
+                
+                <TextView 
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#d1d1d1"
+                    />
+                <LinearLayout 
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="9.08"
+                    >
+                    <TextView 
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.01"
+                        android:background="#d1d1d1"
+                        />
+                    <TextView 
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="6"
+                        android:textSize="14sp"
+                        android:textColor="#101119"
+                        android:paddingBottom="5dp"
+                        android:paddingTop="5dp"
+                        android:gravity="center"
+                        />
+                    <TextView 
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.02"
+                        android:background="#d1d1d1"
+                        />
+                    <TextView 
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+                        android:text="音频设备，视频设备，电脑，笔记本电脑，手机及其他电子设备和配件"
+                        android:textSize="14sp"
+                        android:textColor="#101119"
+                        android:paddingBottom="5dp"
+                        android:paddingTop="5dp"
+                        android:gravity="center"
+                        />
+                    <TextView 
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.02"
+                        android:background="#d1d1d1"
+                        />
+                    <TextView 
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:text="每年30%"
+                        android:textSize="14sp"
+                        android:textColor="#101119"
+                        android:paddingBottom="5dp"
+                        android:paddingTop="5dp"
+                        android:gravity="center"
+                        />
+                    <TextView 
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.02"
+                        android:background="#d1d1d1"
+                        />
+                    <TextView 
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+                        android:text="或者同一型号产品当时的实际价格（以价格较低者为准）"
+                        android:textSize="14sp"
+                        android:textColor="#101119"
+                        android:paddingBottom="5dp"
+                        android:paddingTop="5dp"
+                        android:gravity="center"
+                        />
+                    <TextView 
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.01"
+                        android:background="#d1d1d1"
+                        />
+                </LinearLayout>
+                
+                <TextView 
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#d1d1d1"
+                        />
+                
+                
+            </LinearLayout>
+            
+            
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

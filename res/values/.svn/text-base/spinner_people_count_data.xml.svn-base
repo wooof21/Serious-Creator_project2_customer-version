@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+        <string-array name="groupcount">  
+    <item>2人</item>  
+    <item>3人</item>  
+    <item>4人</item>  
+    <item>5人</item>  
+    <item>6人</item>  
+</string-array>  
+</resources>

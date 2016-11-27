@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/wy_parent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#45000000"
+    android:orientation="vertical" >
+
+    <LinearLayout 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#ffffff"
+        android:layout_centerInParent="true"
+        >
+        
+    <FrameLayout
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#101119" >
+
+        <ImageView
+            android:id="@+id/title_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/back" />
+
+        <TextView
+            android:id="@+id/title_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:paddingBottom="7dp"
+            android:paddingTop="7dp"
+            android:text="修改订单"
+            android:textColor="#ffffff"
+            android:textSize="18sp" />
+    </FrameLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="30dp"
+        android:text="申请变更妆容为"
+        android:textColor="#101119"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/zj_style"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:text=""
+        android:textColor="#ff5b85"
+        android:textSize="16sp"/>
+
+    <TextView 
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:background="#d1d1d1"
+        android:layout_marginTop="5dp"
+        />
+
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+    	android:paddingTop="10dp"
+    	android:paddingBottom="10dp"
+    	android:orientation="horizontal"
+        >
+        <TextView 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="另需支付"
+            android:textSize="16sp"
+            android:layout_marginLeft="30dp"
+            android:textColor="#101119"
+            />
+        
+        <TextView 
+            android:id="@+id/zj_amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text=""
+            android:textSize="16sp"
+            android:textColor="#ff5b85"
+            android:layout_marginLeft="10dp"
+            />
+        
+    </LinearLayout>
+    
+    <TextView 
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:background="#d1d1d1"
+        />
+    
+    
+    <TextView
+        android:id="@+id/wyb_ok"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/tvbg_green"
+        android:gravity="center"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp"
+        android:text="确认支付"
+        android:textColor="#ffffff"
+        android:textSize="16sp" />
+    </LinearLayout>
+
+</RelativeLayout>

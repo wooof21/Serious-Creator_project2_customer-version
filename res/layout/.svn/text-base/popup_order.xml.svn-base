@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="fill_parent"
+    android:background="#45000000"
+    android:orientation="vertical" >
+
+        <TextView
+        android:id="@+id/popup_order_count"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="150dp"
+        android:background="@drawable/personal_center_frame"
+        android:gravity="center"
+        android:text="接单次数"
+        android:textColor="#101119"
+        android:textSize="16sp" />
+    
+    
+    <TextView
+        android:id="@+id/popup_order_zhiye"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:background="@drawable/personal_center_frame"
+        android:gravity="center"
+        android:text="专业评价"
+        android:textColor="#101119"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/popup_order_fuwu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:background="@drawable/personal_center_frame"
+        android:gravity="center"
+        android:text="服务评价"
+        android:textColor="#101119"
+        android:textSize="16sp" 
+        android:layout_marginBottom="30dp"/>
+
+    
+
+</LinearLayout>
